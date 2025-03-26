@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('disponibilities', function (Blueprint $table) {
             $table->id();
+            $table->integer("day_by_week");
+            $table->time("start_time");
+            $table->time("end_time");
+            $table->foreignId("doctor_id")->references("id")->on("users")->cascadeOnDelete();
             $table->timestamps();
         });
     }

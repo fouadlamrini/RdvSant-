@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('video_consultations', function (Blueprint $table) {
             $table->id();
+            $table->string("video_link");
+            $table->string("status");
+            $table->foreignId("appointment_id")->constrained()->cascadeOnDelete();
+            $table->foreignId("patient_id")->references('id')->on("users")->cascadeOnDelete();
+            $table->foreignId("doctor_id")->references("id")->on("users")->cascadeOnDelete();
             $table->timestamps();
         });
     }
