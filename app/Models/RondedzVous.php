@@ -12,4 +12,18 @@ class RondedzVous extends Model
         'date_rendez_vous',
         'status',
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(User::class, 'patient_id');
+    }
+    public function doctor()
+    {
+        return $this->belongsTo(User::class, 'doctor_id');
+    }
+
+    public function videoConsultation()
+{
+    return $this->hasOne(VideoConsultation::class, 'rendez_vous_id');
+}
 }
