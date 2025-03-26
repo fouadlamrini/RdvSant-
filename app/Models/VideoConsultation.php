@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class VideoConsultation extends Model
 {
     protected $fillable = [
-        'rendez_vous_id',
+        'appointment_id',
         'video_link',
         'status',
         'patient_id',
@@ -22,8 +22,8 @@ class VideoConsultation extends Model
     {
         return $this->belongsTo(User::class, 'doctor_id');
     }
-    public function rendezVous()
+    public function appointment()
     {
-        return $this->belongsTo(RondedzVous::class, 'rendez_vous_id');
+        return $this->belongsTo(Appointment::class, 'appointment_id');
     }
 }

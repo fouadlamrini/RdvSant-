@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RondedzVous extends Model
+class Appointment extends Model
 {
     protected $fillable = [
         'patient_id',
         'doctor_id',
-        'date_rendez_vous',
+        'appointment_date',
         'status',
     ];
 
@@ -24,6 +24,6 @@ class RondedzVous extends Model
 
     public function videoConsultation()
 {
-    return $this->hasOne(VideoConsultation::class, 'rendez_vous_id');
+    return $this->hasOne(VideoConsultation::class, 'appointment_id');
 }
 }

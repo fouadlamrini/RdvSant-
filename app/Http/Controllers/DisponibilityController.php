@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DisponibiliteController extends Controller
+class DisponibilityController extends Controller
 {
     //
 }

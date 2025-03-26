@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RondedzVousController extends Controller
+class AppointmentController extends Controller
 {
     //
 }

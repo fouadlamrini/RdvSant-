@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'phone',
         'bio',
-        'specialite',
+        'speciality',
         'role',
     ];
 
@@ -53,17 +53,17 @@ class User extends Authenticatable
 
 public function disponinbilites(){
 
-    return $this->hasMany(Disponibilite::class,'doctor_id');
+    return $this->hasMany(Disponibility::class,'doctor_id');
 }
 
 public function rendezVousAsPatient()
 {
-    return $this->hasMany(RondedzVous::class, 'patient_id');
+    return $this->hasMany(Appointment::class, 'patient_id');
 }
 
 public function rendezVousAsDoctor()
 {
-    return $this->hasMany(RondedzVous::class, 'doctor_id');
+    return $this->hasMany(Appointment::class, 'doctor_id');
 }
 
 public function videoConsultationsAsPatient()
