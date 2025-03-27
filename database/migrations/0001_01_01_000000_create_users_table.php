@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('speciality')->nullable();
+            $table->text('bio')->nullable();
             $table->string('role');
             $table->timestamps();
         });

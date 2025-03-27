@@ -9,7 +9,7 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth/login');
 });
-Route::get('/signup/docteur', function () {
+Route::get('/signup/doctor', function () {
     return view('auth/SignUpDoctor');
 });
 Route::get('/signup/patient', function () {
@@ -17,4 +17,5 @@ Route::get('/signup/patient', function () {
 });
 
 Route::post("signup/patient", [AuthController::class,"RegisterPatient"])->name("signup.patient");
+Route::post("signup/doctor", [AuthController::class,"RegisterDoctor"])->name("signup.doctor");
 
