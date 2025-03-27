@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +15,6 @@ Route::get('/signup/docteur', function () {
 Route::get('/signup/patient', function () {
     return view('auth/SignUpPatient');
 });
+
+Route::post("signup/patient", [AuthController::class,"RegisterPatient"])->name("signup.patient");
+
