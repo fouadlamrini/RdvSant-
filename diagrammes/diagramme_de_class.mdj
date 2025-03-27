@@ -141,7 +141,7 @@
 											"top": 70,
 											"width": 119,
 											"height": 13,
-											"text": "#id",
+											"text": "-id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -159,7 +159,7 @@
 											"top": 85,
 											"width": 119,
 											"height": 13,
-											"text": "#first_name",
+											"text": "-first_name",
 											"horizontalAlignment": 0
 										},
 										{
@@ -177,7 +177,7 @@
 											"top": 100,
 											"width": 119,
 											"height": 13,
-											"text": "#last_name",
+											"text": "-last_name",
 											"horizontalAlignment": 0
 										},
 										{
@@ -195,7 +195,7 @@
 											"top": 115,
 											"width": 119,
 											"height": 13,
-											"text": "#email",
+											"text": "-email",
 											"horizontalAlignment": 0
 										},
 										{
@@ -213,7 +213,7 @@
 											"top": 130,
 											"width": 119,
 											"height": 13,
-											"text": "#password",
+											"text": "-password",
 											"horizontalAlignment": 0
 										},
 										{
@@ -231,7 +231,7 @@
 											"top": 145,
 											"width": 119,
 											"height": 13,
-											"text": "#phone",
+											"text": "-phone",
 											"horizontalAlignment": 0
 										},
 										{
@@ -249,7 +249,7 @@
 											"top": 160,
 											"width": 119,
 											"height": 13,
-											"text": "#bio",
+											"text": "-bio",
 											"horizontalAlignment": 0
 										},
 										{
@@ -267,7 +267,7 @@
 											"top": 175,
 											"width": 119,
 											"height": 13,
-											"text": "#specialite",
+											"text": "-specialite",
 											"horizontalAlignment": 0
 										},
 										{
@@ -285,7 +285,7 @@
 											"top": 190,
 											"width": 119,
 											"height": 13,
-											"text": "#role",
+											"text": "-role",
 											"horizontalAlignment": 0
 										}
 									],
@@ -437,8 +437,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -1056,
-											"top": -80,
+											"left": -1216,
+											"top": 128,
 											"height": 13
 										},
 										{
@@ -449,8 +449,8 @@
 											},
 											"font": "Arial;13;1",
 											"parentStyle": true,
-											"left": 205,
-											"top": 263,
+											"left": 125,
+											"top": 367,
 											"width": 134.33251953125,
 											"height": 13,
 											"text": "PATIENT"
@@ -464,8 +464,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -1056,
-											"top": -80,
+											"left": -1216,
+											"top": 128,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -479,16 +479,16 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -1056,
-											"top": -80,
+											"left": -1216,
+											"top": 128,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 200,
-									"top": 256,
+									"left": 120,
+									"top": 360,
 									"width": 144.33251953125,
 									"height": 25,
 									"stereotypeLabel": {
@@ -525,18 +525,18 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 205,
-											"top": 286,
+											"left": 125,
+											"top": 390,
 											"width": 134.33251953125,
 											"height": 13,
-											"text": "#role",
+											"text": "-role",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 200,
-									"top": 281,
+									"left": 120,
+									"top": 385,
 									"width": 144.33251953125,
 									"height": 23
 								},
@@ -561,11 +561,11 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 205,
-											"top": 309,
+											"left": 125,
+											"top": 413,
 											"width": 134.33251953125,
 											"height": 13,
-											"text": "+requestRendezVous()",
+											"text": "+requestAppointment()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -579,8 +579,8 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 205,
-											"top": 324,
+											"left": 125,
+											"top": 428,
 											"width": 134.33251953125,
 											"height": 13,
 											"text": "+VoirRendezVous()",
@@ -589,8 +589,8 @@
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 200,
-									"top": 304,
+									"left": 120,
+									"top": 408,
 									"width": 144.33251953125,
 									"height": 38
 								},
@@ -606,8 +606,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -528,
-									"top": -40,
+									"left": -608,
+									"top": 64,
 									"width": 10,
 									"height": 10
 								},
@@ -623,8 +623,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -528,
-									"top": -40,
+									"left": -608,
+									"top": 64,
 									"width": 10,
 									"height": 10
 								}
@@ -632,8 +632,8 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"containerChangeable": true,
-							"left": 200,
-							"top": 256,
+							"left": 120,
+							"top": 360,
 							"width": 143.33251953125,
 							"height": 112,
 							"nameCompartment": {
@@ -773,7 +773,7 @@
 											"top": 326,
 											"width": 137.9189453125,
 											"height": 13,
-											"text": "#role",
+											"text": "-role",
 											"horizontalAlignment": 0
 										},
 										{
@@ -791,7 +791,7 @@
 											"top": 341,
 											"width": 137.9189453125,
 											"height": 13,
-											"text": "#specialite",
+											"text": "-specialite",
 											"horizontalAlignment": 0
 										},
 										{
@@ -809,7 +809,7 @@
 											"top": 356,
 											"width": 137.9189453125,
 											"height": 13,
-											"text": "#disponibilité",
+											"text": "-disponibilité",
 											"horizontalAlignment": 0
 										}
 									],
@@ -845,7 +845,7 @@
 											"top": 379,
 											"width": 137.9189453125,
 											"height": 13,
-											"text": "+VoirRendezVous()",
+											"text": "+ShowAppointment()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -863,7 +863,7 @@
 											"top": 394,
 											"width": 137.9189453125,
 											"height": 13,
-											"text": "+AjouteConsultation()",
+											"text": "+AddConsultation()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1053,7 +1053,7 @@
 											"top": 278,
 											"width": 99.60546875,
 											"height": 13,
-											"text": "#role",
+											"text": "-role",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1089,7 +1089,7 @@
 											"top": 301,
 											"width": 99.60546875,
 											"height": 13,
-											"text": "+gererUsers()",
+											"text": "+ManageUser()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1203,7 +1203,7 @@
 											"top": 535,
 											"width": 175,
 											"height": 13,
-											"text": "Disponibilité"
+											"text": "Disponibility"
 										},
 										{
 											"_type": "LabelView",
@@ -1279,7 +1279,7 @@
 											"top": 558,
 											"width": 175,
 											"height": 13,
-											"text": "#id",
+											"text": "-id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1297,7 +1297,7 @@
 											"top": 573,
 											"width": 175,
 											"height": 13,
-											"text": "#doctor_id",
+											"text": "-doctor_id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1315,7 +1315,7 @@
 											"top": 588,
 											"width": 175,
 											"height": 13,
-											"text": "#jour_par_semain",
+											"text": "-day_by_week",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1333,7 +1333,7 @@
 											"top": 603,
 											"width": 175,
 											"height": 13,
-											"text": "#start_time",
+											"text": "-start_time",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1351,7 +1351,7 @@
 											"top": 618,
 											"width": 175,
 											"height": 13,
-											"text": "#end_time",
+											"text": "-end_time",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1387,7 +1387,43 @@
 											"top": 641,
 											"width": 175,
 											"height": 13,
-											"text": "+ModifierDisponibalite()",
+											"text": "+UpdateDisponibality()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGV0hMMSXvy41c=",
+											"_parent": {
+												"$ref": "AAAAAAGVBCICAPfZEuk="
+											},
+											"model": {
+												"$ref": "AAAAAAGV0hMMOHvvLfo="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 941,
+											"top": 656,
+											"width": 175,
+											"height": 13,
+											"text": "+AddDisponibility()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGV0hOaQnzAR1E=",
+											"_parent": {
+												"$ref": "AAAAAAGVBCICAPfZEuk="
+											},
+											"model": {
+												"$ref": "AAAAAAGV0hOaNHy9dgI="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 941,
+											"top": 671,
+											"width": 175,
+											"height": 13,
+											"text": "+DeleteDisponibility()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1396,7 +1432,7 @@
 									"left": 936,
 									"top": 636,
 									"width": 185,
-									"height": 23
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1439,7 +1475,7 @@
 							"left": 936,
 							"top": 528,
 							"width": 184,
-							"height": 144,
+							"height": 161,
 							"nameCompartment": {
 								"$ref": "AAAAAAGVBCIB//fTyUk="
 							},
@@ -1501,7 +1537,7 @@
 											"top": 671,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "Rendez-vous"
+											"text": "Appointment"
 										},
 										{
 											"_type": "LabelView",
@@ -1577,7 +1613,7 @@
 											"top": 694,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#id",
+											"text": "-id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1595,7 +1631,7 @@
 											"top": 709,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#patient_id",
+											"text": "-patient_id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1613,7 +1649,7 @@
 											"top": 724,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#doctor_id",
+											"text": "-doctor_id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1631,7 +1667,7 @@
 											"top": 739,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#date_rendez_vous",
+											"text": "-appointment_date",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1649,7 +1685,7 @@
 											"top": 754,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#status",
+											"text": "-status",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1794,8 +1830,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 448,
-									"top": 346,
+									"left": 412,
+									"top": 398,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1816,8 +1852,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 446,
-									"top": 361,
+									"left": 414,
+									"top": 413,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1838,8 +1874,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 453,
-									"top": 317,
+									"left": 409,
+									"top": 369,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1860,8 +1896,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 531,
-									"top": 358,
+									"left": 534,
+									"top": 384,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1882,8 +1918,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 527,
-									"top": 371,
+									"left": 534,
+									"top": 398,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -1903,8 +1939,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 536,
-									"top": 331,
+									"left": 533,
+									"top": 357,
 									"width": 6.5,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -1927,8 +1963,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 367,
-									"top": 335,
+									"left": 291,
+									"top": 412,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -1948,8 +1984,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 368,
-									"top": 348,
+									"left": 295,
+									"top": 425,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -1968,8 +2004,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 364,
-									"top": 307,
+									"left": 281,
+									"top": 386,
 									"width": 6.5,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -2019,7 +2055,7 @@
 								"$ref": "AAAAAAGVBCHyk/dXdPg="
 							},
 							"lineStyle": 1,
-							"points": "559:353;344:323",
+							"points": "559:373;264:407",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGVBC+6QvjnG+g="
@@ -2074,7 +2110,7 @@
 								"$ref": "AAAAAAGVBC+6Qfjcuus="
 							},
 							"lineStyle": 1,
-							"points": "603:663;451:338"
+							"points": "590:663;411:390"
 						},
 						{
 							"_type": "UMLTextView",
@@ -2111,8 +2147,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 448,
-									"top": 205,
+									"left": 407,
+									"top": 258,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2133,8 +2169,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 442,
-									"top": 191,
+									"left": 399,
+									"top": 245,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2155,8 +2191,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 461,
-									"top": 232,
+									"left": 422,
+									"top": 283,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2175,7 +2211,7 @@
 								"$ref": "AAAAAAGVBCHru/cukms="
 							},
 							"lineStyle": 1,
-							"points": "344:278;567:173",
+							"points": "264:371;567:183",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGVBMd3bEecHVk="
@@ -2418,7 +2454,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 814,
-									"top": 457,
+									"top": 461,
 									"width": 28.5517578125,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2442,7 +2478,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 836,
-									"top": 444,
+									"top": 448,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2464,7 +2500,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 813,
-									"top": 482,
+									"top": 486,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2486,7 +2522,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 737,
-									"top": 403,
+									"top": 404,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -2508,7 +2544,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 746,
-									"top": 393,
+									"top": 394,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -2528,8 +2564,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 717,
-									"top": 424,
+									"left": 716,
+									"top": 426,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -2553,7 +2589,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 920,
-									"top": 511,
+									"top": 518,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2574,7 +2610,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 925,
-									"top": 499,
+									"top": 506,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2594,7 +2630,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 907,
-									"top": 537,
+									"top": 544,
 									"width": 6.5,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -2644,7 +2680,7 @@
 								"$ref": "AAAAAAGVBCHyk/dXdPg="
 							},
 							"lineStyle": 1,
-							"points": "708:409;935:544",
+							"points": "708:410;935:551",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGVBNeQjmf9ZX4="
@@ -2828,7 +2864,7 @@
 											"top": 670,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#id",
+											"text": "-id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2846,7 +2882,7 @@
 											"top": 685,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#rendez_vous_id",
+											"text": "-Appointment_id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2864,7 +2900,7 @@
 											"top": 700,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#video_link",
+											"text": "-video_link",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2882,7 +2918,7 @@
 											"top": 715,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#status",
+											"text": "-status",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2900,7 +2936,7 @@
 											"top": 730,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#patient_id",
+											"text": "-patient_id",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2918,7 +2954,7 @@
 											"top": 745,
 											"width": 116.603515625,
 											"height": 13,
-											"text": "#doctor_id",
+											"text": "-doctor_id",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3063,8 +3099,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 453,
-									"top": 317,
+									"left": 409,
+									"top": 369,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -3085,8 +3121,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 455,
-									"top": 302,
+									"left": 407,
+									"top": 354,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -3107,8 +3143,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 448,
-									"top": 346,
+									"left": 412,
+									"top": 398,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -3129,8 +3165,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 371,
-									"top": 305,
+									"left": 288,
+									"top": 383,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -3151,8 +3187,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 375,
-									"top": 292,
+									"left": 288,
+									"top": 369,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -3173,8 +3209,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 363,
-									"top": 332,
+									"left": 286,
+									"top": 410,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -3195,8 +3231,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 535,
-									"top": 328,
+									"left": 531,
+									"top": 355,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -3216,8 +3252,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 534,
-									"top": 315,
+									"left": 527,
+									"top": 342,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -3237,14 +3273,16 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 535,
-									"top": 356,
+									"left": 529,
+									"top": 381,
+									"width": 19.5126953125,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
 									"hostEdge": {
 										"$ref": "AAAAAAGV0bASAcDF4QQ="
-									}
+									},
+									"text": "0..*"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -3286,7 +3324,7 @@
 								"$ref": "AAAAAAGVBCHru/cukms="
 							},
 							"lineStyle": 1,
-							"points": "344:323;559:353",
+							"points": "264:407;559:373",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGV0bASAcDGyM4="
@@ -3341,7 +3379,7 @@
 								"$ref": "AAAAAAGV0bASAcC7Wfo="
 							},
 							"lineStyle": 1,
-							"points": "245:639;451:338"
+							"points": "244:639;411:390"
 						}
 					]
 				},
@@ -3368,8 +3406,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "id",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3378,8 +3415,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "first_name",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3388,8 +3424,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "last_name",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3398,8 +3433,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "email",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3408,8 +3442,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "password",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3418,8 +3451,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "phone",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3428,8 +3460,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "bio",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3438,8 +3469,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "specialite",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3448,8 +3478,7 @@
 								"$ref": "AAAAAAGVBCHmC/cDtGk="
 							},
 							"name": "role",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -3587,8 +3616,7 @@
 								"$ref": "AAAAAAGVBCHru/csobg="
 							},
 							"name": "role",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -3598,7 +3626,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBCHru/csobg="
 							},
-							"name": "requestRendezVous"
+							"name": "requestAppointment"
 						},
 						{
 							"_type": "UMLOperation",
@@ -3728,8 +3756,7 @@
 								"$ref": "AAAAAAGVBCHykvdVd2I="
 							},
 							"name": "role",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3738,8 +3765,7 @@
 								"$ref": "AAAAAAGVBCHykvdVd2I="
 							},
 							"name": "specialite",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3748,8 +3774,7 @@
 								"$ref": "AAAAAAGVBCHykvdVd2I="
 							},
 							"name": "disponibilité",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -3759,7 +3784,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBCHykvdVd2I="
 							},
-							"name": "VoirRendezVous"
+							"name": "ShowAppointment"
 						},
 						{
 							"_type": "UMLOperation",
@@ -3767,7 +3792,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBCHykvdVd2I="
 							},
-							"name": "AjouteConsultation"
+							"name": "AddConsultation"
 						}
 					]
 				},
@@ -3801,8 +3826,7 @@
 								"$ref": "AAAAAAGVBCH8Afd+3Qc="
 							},
 							"name": "role",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -3812,7 +3836,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBCH8Afd+3Qc="
 							},
-							"name": "gererUsers"
+							"name": "ManageUser"
 						}
 					]
 				},
@@ -3992,7 +4016,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Disponibilité",
+					"name": "Disponibility",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
@@ -4001,8 +4025,7 @@
 								"$ref": "AAAAAAGVBCIB//fQDeQ="
 							},
 							"name": "id",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4011,8 +4034,7 @@
 								"$ref": "AAAAAAGVBCIB//fQDeQ="
 							},
 							"name": "doctor_id",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4020,9 +4042,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBCIB//fQDeQ="
 							},
-							"name": "jour_par_semain",
-							"visibility": "protected",
-							"type": ""
+							"name": "day_by_week",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4031,8 +4052,7 @@
 								"$ref": "AAAAAAGVBCIB//fQDeQ="
 							},
 							"name": "start_time",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4041,8 +4061,7 @@
 								"$ref": "AAAAAAGVBCIB//fQDeQ="
 							},
 							"name": "end_time",
-							"visibility": "protected",
-							"type": ""
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -4052,7 +4071,23 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBCIB//fQDeQ="
 							},
-							"name": "ModifierDisponibalite"
+							"name": "UpdateDisponibality"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGV0hMMOHvvLfo=",
+							"_parent": {
+								"$ref": "AAAAAAGVBCIB//fQDeQ="
+							},
+							"name": "AddDisponibility"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGV0hOaNHy9dgI=",
+							"_parent": {
+								"$ref": "AAAAAAGVBCIB//fQDeQ="
+							},
+							"name": "DeleteDisponibility"
 						}
 					]
 				},
@@ -4146,7 +4181,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Rendez-vous",
+					"name": "Appointment",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -4199,7 +4234,7 @@
 								"$ref": "AAAAAAGVBC+6QfjXHK4="
 							},
 							"name": "id",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4208,7 +4243,7 @@
 								"$ref": "AAAAAAGVBC+6QfjXHK4="
 							},
 							"name": "patient_id",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4217,7 +4252,7 @@
 								"$ref": "AAAAAAGVBC+6QfjXHK4="
 							},
 							"name": "doctor_id",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4225,8 +4260,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGVBC+6QfjXHK4="
 							},
-							"name": "date_rendez_vous",
-							"visibility": "protected"
+							"name": "appointment_date",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4235,7 +4270,7 @@
 								"$ref": "AAAAAAGVBC+6QfjXHK4="
 							},
 							"name": "status",
-							"visibility": "protected"
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -4322,7 +4357,7 @@
 								"$ref": "AAAAAAGV0bASAcC2ZsA="
 							},
 							"name": "id",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4330,8 +4365,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGV0bASAcC2ZsA="
 							},
-							"name": "rendez_vous_id",
-							"visibility": "protected"
+							"name": "Appointment_id",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4340,7 +4375,7 @@
 								"$ref": "AAAAAAGV0bASAcC2ZsA="
 							},
 							"name": "video_link",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4349,7 +4384,7 @@
 								"$ref": "AAAAAAGV0bASAcC2ZsA="
 							},
 							"name": "status",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4358,7 +4393,7 @@
 								"$ref": "AAAAAAGV0bASAcC2ZsA="
 							},
 							"name": "patient_id",
-							"visibility": "protected"
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4367,7 +4402,7 @@
 								"$ref": "AAAAAAGV0bASAcC2ZsA="
 							},
 							"name": "doctor_id",
-							"visibility": "protected"
+							"visibility": "private"
 						}
 					],
 					"operations": [
