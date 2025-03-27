@@ -51,11 +51,6 @@
                            placeholder="Password" 
                            class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                 </div>
-                
-               
-                
-               
-                
                 <!-- Submit Button -->
                 <button type="submit" 
                         class="w-full p-3 bg-black text-white font-semibold rounded-lg shadow-md ">
@@ -68,13 +63,20 @@
                 Already have an account? 
                 <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition duration-300">Login</a>
             </p>
+
+            @if (session('success'))
+            <div class="bg-green-50  p-4 mb-4">
+               
+                        <p class="text-sm text-green-700">
+                            {{ session('success') }}
+                        </p>
+                   
+            </div>
+             @endif
+
         </div>
 
-        @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-        @endif
+   
 
     </div>
 </body>
