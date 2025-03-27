@@ -8,3 +8,9 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth/login');
 });
+Route::get('/signup/docteur', function () {
+    return view('auth/SignUpDoctor');
+});
+Route::get('/signup/patient', function () {
+    return view('auth/SignUpPatient');
+});
