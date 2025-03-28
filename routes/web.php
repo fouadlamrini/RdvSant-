@@ -18,12 +18,4 @@ Route::get('/signup/patient', function () {
 
 Route::post("signup/patient", [AuthController::class, "RegisterPatient"])->name("signup.patient");
 Route::post("signup/doctor", [AuthController::class, "RegisterDoctor"])->name("signup.doctor");
-
 Route::post("login", [AuthController::class, "login"])->name("login");
-
-Route::get('/adminDashboard', function () {
-    return view('admin/dashboard'); })->name('admin.dashboard');
-Route::get('/doctorDashboard', function () {
-    return view('doctor/dashboard'); })->name('doctor.dashboard');
-Route::get('/patientDashboard', function () {
-    return view('patient/dashboard'); })->name('patient.dashboard');

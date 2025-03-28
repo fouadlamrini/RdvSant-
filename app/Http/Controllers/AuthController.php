@@ -117,9 +117,9 @@ class AuthController extends Controller
                 return view('pending.pending', compact('doctorFname','doctorLname'));
             } else {
                 return match ($user->role) {
-                    'admin' => redirect()->route('admin.dashboard'),
-                    'doctor' => redirect()->route('doctor.dashboard'),
-                    'patient' => redirect()->route('patient.dashboard'),
+                    'admin' => view('admin.dashboard'),
+                    'doctor' => view('doctor.dashboard'),
+                    'patient' => view('patient.dashboard'),
                     default => redirect()->route('home'),
                 };
             }
