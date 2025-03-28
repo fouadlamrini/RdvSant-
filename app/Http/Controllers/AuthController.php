@@ -109,11 +109,13 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            
+
             if ($user->status == "pending") {
-                return redirect()->route('pending.page');
+                $doctorFname=Auth::user()->first_name;
+                $doctorLname=Auth::user()->last_name;
+            
+                return view('pending.pending', compact('doctorFname','doctorLname'));
             } else {
-                
                 return match ($user->role) {
                     'admin' => redirect()->route('admin.dashboard'),
                     'doctor' => redirect()->route('doctor.dashboard'),

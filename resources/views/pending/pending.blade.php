@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,19 +15,17 @@
         <div class="text-5xl mb-6 text-amber-500">⏳</div>
         
         <!-- Titre -->
-        <h1 class="text-2xl font-bold text-gray-800 mb-4">Votre compte est en attente de validation</h1>
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Your account is awaiting validation</h1>
         
         <!-- Message -->
         <div class="space-y-4 text-gray-600 mb-6">
-            <p>Bonjour <span class="font-semibold">Dr. fouad</span>,</p>
-            <p>Votre demande d'inscription a bien été reçue mais n'a pas encore été approuvée par l'administrateur.</p>
-            <p class="bg-amber-50 p-3 rounded-lg border border-amber-100">
-                Vous ne pouvez pas accéder à la plateforme tant que votre compte n'est pas activé.
+            <p>Hello <span class="font-semibold">Dr. {{$doctorFname." ".$doctorLname}}</span>,</p>
+            <p>Your registration request has been received but has not yet been approved by the administrator.</p>
+            <p class="bg-red-200 p-3 rounded-lg border border-amber-100">
+                You cannot access the platform until your account is activated.
             </p>
           
         </div>
-        
-      
     </div>
 </body>
 </html>

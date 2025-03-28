@@ -21,9 +21,6 @@ Route::post("signup/doctor", [AuthController::class, "RegisterDoctor"])->name("s
 
 Route::post("login", [AuthController::class, "login"])->name("login");
 
-Route::get('/pending', function () {
-    return view('pending/pending'); })->name('pending.page');
-
 Route::get('/adminDashboard', function () {
     return view('admin/dashboard'); })->name('admin.dashboard');
 Route::get('/doctorDashboard', function () {
