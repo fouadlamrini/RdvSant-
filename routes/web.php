@@ -19,8 +19,10 @@ Route::get('/signup/patient', function () {
 Route::post("signup/patient", [AuthController::class, "RegisterPatient"])->name("signup.patient");
 Route::post("signup/doctor", [AuthController::class, "RegisterDoctor"])->name("signup.doctor");
 
+Route::post("login", [AuthController::class, "login"])->name("login");
+
 Route::get('/pending', function () {
-    return view('pending'); })->name('pending.page');
+    return view('pending/pending'); })->name('pending.page');
 
 Route::get('/adminDashboard', function () {
     return view('admin/dashboard'); })->name('admin.dashboard');

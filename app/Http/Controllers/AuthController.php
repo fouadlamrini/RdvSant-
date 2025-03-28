@@ -99,15 +99,21 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
+       
+
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            
             if ($user->status == "pending") {
                 return redirect()->route('pending.page');
             } else {
+                
                 return match ($user->role) {
                     'admin' => redirect()->route('admin.dashboard'),
                     'doctor' => redirect()->route('doctor.dashboard'),

@@ -25,16 +25,17 @@
         <div class="w-full md:w-1/2 px-0 md:px-4">
             <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Sign in</h2>
 
-            <form class="space-y-4">
+            <form class="space-y-4" method="post" action="{{ route('login') }}">
+                @csrf
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" id="email" placeholder="   Email"
+                    <input type="email" id="email" placeholder="   Email" name="email"
                         class="w-full px-4 py-3 border border-gray-200 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white">
                 </div>
 
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                    <input type="password" id="password" placeholder="  password"
+                    <input type="password" id="password" placeholder="  password" name="password"
                         class="w-full px-4 py-3 border border-gray-200 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white">
                 </div>
 
