@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('speciality')->nullable();
             $table->text('bio')->nullable();
             $table->string('role');
+            $table->enum('status', ['pending', 'active', 'inactive'])->default('pending');
+
             $table->timestamps();
         });
 

@@ -35,12 +35,14 @@ class AuthController extends Controller
             ]
         );
         $role = User::count() === 0 ? 'admin' : 'patient';
+        $status = $role === 'doctor' ? 'pending' : 'active';
         $patient = User::create([
             'first_name' => $request->first_name,
             'last_name'  => $request->last_name,
             'email'      => $request->email,
             'password'   => Hash::make($request->password),
             'role' => $role,
+            'status'=>$status,
         ]);
       
 
@@ -73,6 +75,7 @@ class AuthController extends Controller
             ]
         );
         $role = User::count() === 0 ? 'admin' : 'doctor';
+        $status = $role === 'doctor' ? 'pending' : 'active';
         $doctor = User::create([
             'first_name' => $request->first_name,
             'last_name'  => $request->last_name,
@@ -81,6 +84,7 @@ class AuthController extends Controller
             'speciality'      => $request->speciality,
             'bio'      => $request->bio,
             'role' => $role,
+            'status' =>$status,
         ]);
         
        
