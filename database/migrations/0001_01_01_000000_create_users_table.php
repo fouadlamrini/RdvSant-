@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('speciality')->nullable();
             $table->text('bio')->nullable();
-            $table->string('role');
+            $table->enum('role', ['admin', 'doctor', 'patient']);
             $table->enum('status', ['pending', 'active', 'inactive'])->default('pending');
 
             $table->timestamps();
