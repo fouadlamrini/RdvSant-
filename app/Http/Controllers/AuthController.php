@@ -6,6 +6,8 @@ use App\Models\User;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 
 class AuthController extends Controller
 {
@@ -42,9 +44,9 @@ class AuthController extends Controller
             'email'      => $request->email,
             'password'   => Hash::make($request->password),
             'role' => $role,
-            'status'=>$status,
+            'status' => $status,
         ]);
-      
+
 
         return redirect()->back()->with("success", "Your Account created successfully");
     }
@@ -84,10 +86,37 @@ class AuthController extends Controller
             'speciality'      => $request->speciality,
             'bio'      => $request->bio,
             'role' => $role,
-            'status' =>$status,
+            'status' => $status,
         ]);
-        
-       
+
+
         return redirect()->back()->with("success", "Your Account created successfully");
     }
+
+
+
+
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            if ($user->status == "pending") {
+                return redirect()->route('pending.page');
+            } else {
+                return match ($user->role) {
+                    'admin' => redirect()->route('admin.dashboard'),
+                    'doctor' => redirect()->route('doctor.dashboard'),
+                    'patient' => redirect()->route('patient.dashboard'),
+                    default => redirect()->route('home'),
+                };
+            }
+        }
+        return back()->withErrors(['email' => 'Invalid credentials']);
+    }
+    
 }
