@@ -50,6 +50,9 @@ class AuthController extends Controller
 
         return redirect()->back()->with("success", "Your Account created successfully");
     }
+
+
+    
     public function RegisterDoctor(Request $request)
     {
 
@@ -99,7 +102,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        
+       
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
@@ -117,9 +120,9 @@ class AuthController extends Controller
                 return view('pending.pending', compact('doctorFname','doctorLname'));
             } else {
                 return match ($user->role) {
-                    'admin' => view('admin.dashboard'),
-                    'doctor' => view('doctor.dashboard'),
-                    'patient' => view('patient.dashboard'),
+                    'admin' =>redirect()->route('admin.dashboard'),
+                    'doctor' => redirect()->route('doctor.dashboard'),
+                    'patient' =>redirect()->route('patient.dashboard'),
                     default => redirect()->route('home'),
                 };
             }

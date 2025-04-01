@@ -14,8 +14,8 @@ class UserController extends Controller
     {
         
         $doctors = User::where('status', 'active')->where('role', 'doctor')->get(); 
-       
-return view('patient/dashboard', compact('doctors'));
+      
+return view('patient.dashboard', compact('doctors'));
     }
 
     /**
