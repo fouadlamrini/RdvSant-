@@ -34,3 +34,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/patient/dashboard', [AuthController::class, 'patientDashboard'])->name('patient.dashboard');
 });
 
+Route::get('/admin/users/{id}/toggle-status', [AuthController::class, 'toggleStatus'])->name('users.toggleStatus');
+

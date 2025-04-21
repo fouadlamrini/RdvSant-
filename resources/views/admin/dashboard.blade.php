@@ -66,7 +66,20 @@
                             <td class="p-2 border">{{ $user->first_name . ' ' . $user->last_name }}</td>
                             <td class="p-2 border text-green-500">{{ $user->role }}</td>
                             
-                            <td class="p-2 border"><span class="text-green-600 font-semibold">{{ $user->status }}</span></td>
+                            @php
+                            $statusColor = match($user->status) {
+                                'pending' => 'text-yellow-500',
+                                'active' => 'text-blue-600',
+                                'inactive' => 'text-red-500',
+                                default => 'text-gray-500'
+                            };
+                        @endphp
+                        
+                        <td class="p-2 border">
+                            <a href="{{ route('users.toggleStatus', $user->id) }}">
+                                <button class="{{ $statusColor }} font-semibold">{{ $user->status }}</button>
+                            </a>
+                        </td>
                             <td class="p-2 border">
                                 <a href="#" class="text-blue-500 hover:underline">Modifier</a> |
                                 <a href="#" class="text-red-500 hover:underline">Supprimer</a>

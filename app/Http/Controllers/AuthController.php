@@ -132,7 +132,7 @@ class AuthController extends Controller
 
     public function adminDashboard()
     {
-        $users = user::all();
+        $users = User::where('role', '!=', 'admin')->get();
         return view('admin.dashboard',compact('users'));
     }
     
@@ -147,6 +147,29 @@ class AuthController extends Controller
         return view('patient.dashboard', compact('doctors'));
     }
 
+
+
+    public function toggleStatus($id)
+{
+    $user = User::findOrFail($id);
+
+    if ($user->status === 'pending') {
+        $user->status = 'active';
+    } elseif ($user->status === 'active') {
+        $user->status = 'inactive';
+    } elseif ($user->status === 'inactive') {
+        $user->status = 'active';
+    }
+
+    $user->save();
+
+    return redirect()->back()->with('success', 'Le statut a été mis à jour.');
+}
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home');
+    } 
 
     
 }
