@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,10 +30,11 @@ Route::post("/login", [AuthController::class, "login"])->name("login");
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [AuthController::class, 'adminDashboard'])->name('admin.dashboard');
-    Route::get('/doctor/dashboard', [AuthController::class, 'doctorDashboard'])->name('doctor.dashboard');
-    Route::get('/patient/dashboard', [AuthController::class, 'patientDashboard'])->name('patient.dashboard');
+    Route::get('/admin/dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
+    Route::get('/doctor/dashboard', [DashboardController::class, 'doctorDashboard'])->name('doctor.dashboard');
+    Route::get('/patient/dashboard', [DashboardController::class, 'patientDashboard'])->name('patient.dashboard');
 });
 
-Route::get('/admin/users/{id}/toggle-status', [AuthController::class, 'toggleStatus'])->name('users.toggleStatus');
+Route::get('/admin/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 

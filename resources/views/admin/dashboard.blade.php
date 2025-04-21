@@ -81,8 +81,12 @@
                             </a>
                         </td>
                             <td class="p-2 border">
-                                <a href="#" class="text-blue-500 hover:underline">Modifier</a> |
-                                <a href="#" class="text-red-500 hover:underline">Supprimer</a>
+                            
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger text-red-500">Supprimer</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

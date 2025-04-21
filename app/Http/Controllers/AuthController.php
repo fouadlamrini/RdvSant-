@@ -130,41 +130,15 @@ class AuthController extends Controller
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
 
-    public function adminDashboard()
-    {
-        $users = User::where('role', '!=', 'admin')->get();
-        return view('admin.dashboard',compact('users'));
-    }
+  
     
-    public function doctorDashboard()
-    {
-        return view('doctor.dashboard');
-    }
+  
     
-    public function patientDashboard()
-    {
-        $doctors = User::where('status', 'active')->where('role', 'doctor')->get(); 
-        return view('patient.dashboard', compact('doctors'));
-    }
+ 
 
 
 
-    public function toggleStatus($id)
-{
-    $user = User::findOrFail($id);
-
-    if ($user->status === 'pending') {
-        $user->status = 'active';
-    } elseif ($user->status === 'active') {
-        $user->status = 'inactive';
-    } elseif ($user->status === 'inactive') {
-        $user->status = 'active';
-    }
-
-    $user->save();
-
-    return redirect()->back()->with('success', 'Le statut a été mis à jour.');
-}
+   
     public function logout()
     {
         Auth::logout();
