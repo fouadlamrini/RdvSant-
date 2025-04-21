@@ -129,5 +129,24 @@ class AuthController extends Controller
         }
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
+
+    public function adminDashboard()
+    {
+        $users = user::all();
+        return view('admin.dashboard',compact('users'));
+    }
+    
+    public function doctorDashboard()
+    {
+        return view('doctor.dashboard');
+    }
+    
+    public function patientDashboard()
+    {
+        $doctors = User::where('status', 'active')->where('role', 'doctor')->get(); 
+        return view('patient.dashboard', compact('doctors'));
+    }
+
+
     
 }

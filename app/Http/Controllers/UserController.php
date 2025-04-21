@@ -10,13 +10,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        
-        $doctors = User::where('status', 'active')->where('role', 'doctor')->get(); 
-      
-return view('patient.dashboard', compact('doctors'));
-    }
+
 
     /**
      * Show the form for creating a new resource.

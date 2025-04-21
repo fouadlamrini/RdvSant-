@@ -28,4 +28,9 @@ Route::post("signup/doctor", [AuthController::class, "RegisterDoctor"])->name("s
 Route::post("/login", [AuthController::class, "login"])->name("login");
 
 
-Route::get('/dashboard/patient', [UserController::class, 'index'])->name('patient.dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/dashboard', [AuthController::class, 'adminDashboard'])->name('admin.dashboard');
+    Route::get('/doctor/dashboard', [AuthController::class, 'doctorDashboard'])->name('doctor.dashboard');
+    Route::get('/patient/dashboard', [AuthController::class, 'patientDashboard'])->name('patient.dashboard');
+});
+
