@@ -12,25 +12,39 @@
 
 <body class="flex flex-col min-h-screen">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-gray-800">MediCare</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Doctors</a>
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Services</a>
-                    <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
-                    <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
-                </div>
-                <div class="flex items-center">
-                    <a href="{{ route('login') }}" class="px-4 py-2 rounded-md text-white bg-black hover:bg-gray-800 transition duration-300">Sign In</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <nav class="bg-black text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">RdvSent</a>
+
+      <!-- Hamburger Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-4">
+        <a href="{{ route('home') }}" class="hover:text-blue-500">Home</a>
+        <a href="{{ route('about') }}" class="hover:text-blue-500">About</a>
+      
+        <a href="{{ route('signup.doctor') }}" class="hover:text-blue-500">Sign Up Doctor</a>
+        <a href="{{ route('signup.patient') }}" class="hover:text-blue-500">Sign Up Patient</a>
+        <a href="{{ route('login') }}" class="hover:text-blue-500">Login</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <a href="{{ route('home') }}" class="block py-2 hover:text-blue-500">Home</a>
+      <a href="{{ route('about') }}" class="block py-2 hover:text-blue-500">About</a>
+      <a href="{{ route('signup.doctor') }}" class="block py-2 hover:text-blue-500">Sign Up Doctor</a>
+      <a href="{{ route('signup.patient') }}" class="block py-2 hover:text-blue-500">Sign Up Patient</a>
+      <a href="{{ route('login') }}" class="block py-2 hover:text-blue-500">Login</a>
+    </div>
+  </nav> 
+  <!-- end navbar -->
+  
 
     <!-- Main Content -->
     <main class="flex-grow flex items-center justify-center p-4 md:bg-[url('/images/360_F_424309320_UkOxg2z3sq7yXwGnWCO6xBXkRI4byhnI.jpg')] bg-cover bg-center">
@@ -64,57 +78,22 @@
                         class="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition duration-300 font-medium mt-2 shadow-md">
                         Continue
                     </button>
-
-                    <p class="text-center text-sm text-gray-600 mt-4">
-                        You don't have an account?
-                        <a href="#" class="font-semibold text-blue-600 hover:underline ml-1">Sign up</a>
-                    </p>
+                     
                 </form>
             </div>
         </div>
     </main>
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-4">
+    <p>&copy; 2025 RdvSent. All Rights Reserved.</p>
+    <div class="space-x-4">
+        <a href="#privacy" class="hover:text-blue-500">Privacy Policy</a>
+        <a href="#terms" class="hover:text-blue-500">Terms of Service</a>
+        <a href="#contact" class="hover:text-blue-500">Contact</a>
+    </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">MediCare</h3>
-                    <p class="text-gray-400">Providing quality healthcare services with compassion and excellence.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Doctors</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Emergency Care</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Primary Care</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Dental Care</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pediatrics</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                    <address class="text-gray-400 not-italic">
-                        <p>123 Medical Center Drive</p>
-                        <p>City, State 12345</p>
-                        <p>Phone: (123) 456-7890</p>
-                        <p>Email: info@medicare.com</p>
-                    </address>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2023 MediCare. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<script src="{{ asset('js/menu_mobile.js') }}"></script>
 </body>
 
 </html>
