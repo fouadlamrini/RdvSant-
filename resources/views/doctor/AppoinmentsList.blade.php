@@ -14,7 +14,7 @@
             <nav class="space-y-2">
                 <a href="#" class="block bg-blue-600 p-2 rounded">Appoinments list</a>
                 <a href="#" class="block bg-blue-600 p-2 rounded">doctor shudule</a>
-                <a href="{{route('logout')}}" class="block bg-red-600 p-2 rounded">Déconnexion</a>
+                <a href="#" class="block bg-red-600 p-2 rounded">Déconnexion</a>
             </nav>
         </aside>
         

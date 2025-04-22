@@ -40,3 +40,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/about',[PagesController::class, 'showAbout'])->name('about');
 Route::get('/home',[PagesController::class, 'showHome'])->name('home');
+Route::get('/appoinmentsList',[PagesController::class, 'appoinmentsList'])->name('appoinmentsList');
+Route::get('/doctorShudule',[PagesController::class, 'doctorShudule'])->name('doctorShudule');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

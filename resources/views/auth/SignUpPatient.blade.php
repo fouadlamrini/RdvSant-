@@ -113,7 +113,7 @@
                 <!-- Login Link -->
                 <p class="mt-4 text-center text-gray-600">
                     Already have an account?
-                    <a href="#"
+                    <a href="{{route('login') }}"
                         class="text-blue-600 font-semibold hover:text-blue-800 transition duration-300">Login</a>
                 </p>
 
