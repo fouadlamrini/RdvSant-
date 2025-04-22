@@ -15,9 +15,9 @@ class PagesController extends Controller
     {
         return view('pages/Home');
     }
- function appoinmentsList(){
-    return view('pages/AppointmentList');
- }
+
+
+ 
        function doctorShudule(){
-    return view('pages/DoctorShudule');}
+    return view('doctor/DoctorShudule');}
 }  

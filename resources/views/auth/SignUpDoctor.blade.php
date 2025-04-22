@@ -13,7 +13,7 @@
  <!-- Navbar -->
  <nav class="bg-black text-white shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold">RdvSent</a>
+      <a href="{{route('home')}}" class="text-2xl font-bold">RdvSent</a>
 
       <!-- Hamburger Menu Button -->
       <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
