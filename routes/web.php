@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DisponibilityController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -41,4 +43,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/about',[PagesController::class, 'showAbout'])->name('about');
 Route::get('/',[PagesController::class, 'showHome'])->name('home');
 Route::get('/doctorShudule',[PagesController::class, 'doctorShudule'])->name('doctorShudule');
+Route::post('/doctorShudule', [PagesController::class, 'storeSchedule']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/doctor/schedule/events', [DisponibilityController::class, 'getScheduleEvents']);

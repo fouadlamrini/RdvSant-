@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+           
         Schema::create('disponibilities', function (Blueprint $table) {
             $table->id();
-            $table->integer("day_by_week");
-            $table->time("start_time");
-            $table->time("end_time");
-            $table->foreignId("doctor_id")->references("id")->on("users")->cascadeOnDelete();
+
+            $table->foreignId('doctor_id')->constrained('users')->onDelete('cascade');
+
+            $table->enum('day_of_week', ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']);
+            $table->time('start_time');
+            $table->time('end_time');
+
             $table->timestamps();
         });
     }
