@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DisponibilityController;
@@ -47,3 +48,11 @@ Route::post('/doctorShudule', [PagesController::class, 'storeSchedule']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/doctor/schedule/events', [DisponibilityController::class, 'getScheduleEvents']);
+
+
+Route::get('/doctor/{doctorId}/appointments', [AppointmentController::class, 'showAvailableSlots'])->name('appointments.showAvailableSlots');
+
+
+Route::post('/doctor/{doctorId}/appointments', [AppointmentController::class, 'bookAppointment'])->name('appointments.book');
+
+Route::post('appointments/store', [AppointmentController::class, 'store'])->name('appointments.store');     

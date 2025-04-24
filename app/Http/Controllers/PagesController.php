@@ -24,19 +24,15 @@ class PagesController extends Controller
 
     public function storeSchedule(Request $request)
     {
-        $request->validate([
-            'day_of_week' => 'required|string',
+        // dd($request->all());
+        $validated = $request->validate([
             'start_time' => 'required|date_format:H:i',
             'end_time' => 'required|date_format:H:i',
+            'date' => 'required|date',
         ]);
 
-        Disponibility::create([
-            'doctor_id' => auth()->id(),
-            'day_of_week' => $request->day_of_week,
-            'start_time' => $request->start_time,
-            'end_time' => $request->end_time,
-        ]);
-
+        $validated['doctor_id'] = auth()->id();
+        Disponibility::create($validated);
         return redirect()->back()->with('success', 'Schedule created successfully.');
     }
 }  

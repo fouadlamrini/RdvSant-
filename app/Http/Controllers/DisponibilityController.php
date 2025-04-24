@@ -15,12 +15,12 @@ class DisponibilityController extends Controller
                 ->get()
                 ->map(function($disponibility) {
                     return [
-                        'title' => 'Available',
-                        'start' => $disponibility->day_of_week . ' ' . $disponibility->start_time,
-                        'end' => $disponibility->day_of_week . ' ' . $disponibility->end_time,
+                        'start' => $disponibility->date . ' ' . $disponibility->start_time,  
+                        'end' => $disponibility->date . ' ' . $disponibility->end_time,
+                        'status' => $disponibility->status,      
+
                     ];
                 });
-
     return response()->json($events);
 }
 }

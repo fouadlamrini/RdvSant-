@@ -17,10 +17,10 @@ return new class extends Migration
 
             $table->foreignId('doctor_id')->constrained('users')->onDelete('cascade');
 
-            $table->enum('day_of_week', ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']);
+            $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
-
+            $table->enum('status', ['available', 'booked'])->default('available'); 
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@ class DashboardController extends Controller
     public function patientDashboard()
     {
         $doctors = User::where('status', 'active')->where('role', 'doctor')->get(); 
+    
         return view('patient.dashboard', compact('doctors'));
     }
 

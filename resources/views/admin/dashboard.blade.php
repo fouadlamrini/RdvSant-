@@ -15,7 +15,7 @@
                 <a href="#" class="block bg-blue-600 p-2 rounded">Dashboard</a>
                 <a href="#" class="block bg-blue-600 p-2 rounded">STATISTIQUE</a>
                 <a href="#" class="block bg-blue-600 p-2 rounded">USER</a>
-                <a href="#" class="block bg-red-600 p-2 rounded">Déconnexion</a>
+                <a href="{{ route('logout') }}" class="block bg-red-600 p-2 rounded">Déconnexion</a>
             </nav>
         </aside>
         
