@@ -17,6 +17,7 @@
                 <a href="{{route('doctor.dashboard')}}" class="block bg-blue-600 p-2 rounded">Appoinments list</a>
                 <a href="{{route('doctorShudule')}}" class="block bg-blue-600 p-2 rounded">doctor shudule</a>
                 <a href="{{route('logout')}}" class="block bg-red-600 p-2 rounded">Déconnexion</a>
+                {{-- <a href="{{route('test')}}" class="block bg-red-600 p-2 rounded">test</a> --}}
             </nav>
         </aside>
         
@@ -52,48 +53,31 @@
                 <table class="w-full border-collapse border border-gray-200 text-sm">
                     <thead>
                         <tr class="bg-gray-200 text-left">
-                            <th class="p-2 border">Id d'utilisateur</th>
-                            <th class="p-2 border">Nom d'utilisateur</th>
-                            <th class="p-2 border">Role</th>
-                            <th class="p-2 border">Email</th>
+                            <th class="p-2 border">Nom de patient</th>
+                            <th class="p-2 border">Appointment date</th>
+                            <th class="p-2 border">Start time</th>
+                            <th class="p-2 border">End time</th>
                             <th class="p-2 border">Status</th>
                             <th class="p-2 border">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                      
+                        @foreach($appointments as $appointment)
                         <tr class="text-center hover:bg-gray-50">
-                            <td class="p-2 border">7</td>
-                            <td class="p-2 border">admin</td>
-                            <td class="p-2 border text-green-500">admin</td>
-                            <td class="p-2 border">admin@admin.com</td>
-                            <td class="p-2 border"><span class="text-green-600 font-semibold">active</span></td>
+                            <td  class="p-2 border">{{ $appointment->patient->first_name }} {{ $appointment->patient->last_name }}</td>
+                            <td  class="p-2 border">{{ $appointment->appointment_date }}</td>
+                            <td  class="p-2 border">{{ $appointment->start_time }}</td>
+                            <td  class="p-2 border">{{ $appointment->end_time }}</td>
+                            <td  class="p-2 border"><span class="text-green-600 font-semibold">{{ $appointment->status }}</span></td>
                             <td class="p-2 border">
-                                <a href="#" class="text-blue-500 hover:underline">Modifier</a> |
-                                <a href="#" class="text-red-500 hover:underline">Supprimer</a>
+                                <a href="#" class="text-blue-500 hover:underline">Accepte</a> |
+                                <a href="#" class="text-red-500 hover:underline">Cancel</a>
                             </td>
                         </tr>
-                        <tr class="text-center hover:bg-gray-50">
-                            <td class="p-2 border">8</td>
-                            <td class="p-2 border">ayoub</td>
-                            <td class="p-2 border text-green-500">freelancer</td>
-                            <td class="p-2 border">ayoub@gmail.com</td>
-                            <td class="p-2 border"><span class="text-yellow-500 font-semibold">pending</span></td>
-                            <td class="p-2 border">
-                                <a href="#" class="text-blue-500 hover:underline">Modifier</a> |
-                                <a href="#" class="text-red-500 hover:underline">Supprimer</a>
-                            </td>
-                        </tr>
-                        <tr class="text-center hover:bg-gray-50">
-                            <td class="p-2 border">9</td>
-                            <td class="p-2 border">jebbouri</td>
-                            <td class="p-2 border text-green-500">user</td>
-                            <td class="p-2 border">jebbouri@gmail.com</td>
-                            <td class="p-2 border"><span class="text-red-600 font-semibold">inactive</span></td>
-                            <td class="p-2 border">
-                                <a href="#" class="text-blue-500 hover:underline">Modifier</a> |
-                                <a href="#" class="text-red-500 hover:underline">Supprimer</a>
-                            </td>
-                        </tr>
+                    @endforeach
+                     
+                       
                     </tbody>
                 </table>
             </div>
