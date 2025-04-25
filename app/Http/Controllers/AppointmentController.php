@@ -64,24 +64,27 @@ class AppointmentController extends Controller
 
 
     public function confirm($id)
-{
-    $appointment = Appointment::findOrFail($id);
-    $appointment->status = 'confirmed';
-    $appointment->save();
+    {
+        $appointment = Appointment::findOrFail($id);
+        $appointment->status = 'confirmed';
+        $appointment->save();
 
-    return back()->with('success', 'Appointment confirmed.');
-}
+        return back()->with('success', 'Appointment confirmed.');
+    }
 
-public function destroy($id)
-{
-    $appointment = Appointment::findOrFail($id);
-    $appointment->delete();
+    public function destroy($id)
+    {
+        $appointment = Appointment::findOrFail($id);
 
-    return back()->with('success', 'Appointment deleted.');
-}
+        
+        Disponibility::where('doctor_id', $appointment->doctor_id)
+            ->where('date', $appointment->appointment_date)
+            ->where('start_time', '<=', $appointment->start_time)
+            ->where('end_time', '>=', $appointment->end_time)
+            ->update(['status' => 'available']);
 
+        $appointment->delete();
 
-
-
-
+        return back()->with('success', 'Appointment deleted.');
+    }
 }
