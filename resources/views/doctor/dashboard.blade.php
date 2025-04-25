@@ -69,10 +69,22 @@
                             <td  class="p-2 border">{{ $appointment->appointment_date }}</td>
                             <td  class="p-2 border">{{ $appointment->start_time }}</td>
                             <td  class="p-2 border">{{ $appointment->end_time }}</td>
-                            <td  class="p-2 border"><span class="text-green-600 font-semibold">{{ $appointment->status }}</span></td>
                             <td class="p-2 border">
-                                <a href="#" class="text-blue-500 hover:underline">Accepte</a> |
-                                <a href="#" class="text-red-500 hover:underline">Cancel</a>
+                                @if($appointment->status === 'pending')
+                                    <span class="text-yellow-500 font-semibold">{{ $appointment->status }}</span>
+                                @elseif($appointment->status === 'confirmed')
+                                    <span class="text-blue-600 font-semibold">{{ $appointment->status }}</span>
+                               
+                                @endif
+                            </td>
+                            <td class="p-2 border">
+                                <a href="{{ route('appointments.confirm', $appointment->id) }}" class="text-blue-500 hover:underline">Accepte</a> |
+                            
+                                <form action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Tu es sûr ?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 hover:underline">Cancel</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

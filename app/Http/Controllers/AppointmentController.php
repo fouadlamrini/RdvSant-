@@ -51,7 +51,6 @@ class AppointmentController extends Controller
             'appointment_date' => $validated['appointment_date'],
             'start_time' => $validated['start_time'],
             'end_time' => $validated['end_time'],
-            'status' => 'confirmed',
         ]);
         $availability = Disponibility::where('doctor_id', $validated['doctor_id'])
         ->where('date', $validated['appointment_date'])
@@ -62,6 +61,24 @@ class AppointmentController extends Controller
 
         return redirect() -> back() -> with('success', 'Appointment created successfully.');
     }
+
+
+    public function confirm($id)
+{
+    $appointment = Appointment::findOrFail($id);
+    $appointment->status = 'confirmed';
+    $appointment->save();
+
+    return back()->with('success', 'Appointment confirmed.');
+}
+
+public function destroy($id)
+{
+    $appointment = Appointment::findOrFail($id);
+    $appointment->delete();
+
+    return back()->with('success', 'Appointment deleted.');
+}
 
 
 
