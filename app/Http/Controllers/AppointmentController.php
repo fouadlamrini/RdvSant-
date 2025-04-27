@@ -13,13 +13,13 @@ class AppointmentController extends Controller
     
     public function showAvailableSlots($doctorId)
     {
-        $availableSlots = Disponibility::where('doctor_id', $doctorId)
+                $availableSlots = Disponibility::where('doctor_id', $doctorId)
             ->whereDate('date', '>=', now()->toDateString())
             ->orderBy('date')
             ->orderBy('start_time')
             ->get(['date', 'start_time', 'end_time','status']);
-
-        return response()->json($availableSlots);
+    
+                 return response()->json($availableSlots);
     }
 
    
@@ -33,10 +33,10 @@ class AppointmentController extends Controller
             'end_time' => 'required|after:start_time',  
         ]);
         $availability = Disponibility::where('doctor_id', $validated['doctor_id'])
-            ->where('date', $validated['appointment_date'])
-            ->where('start_time', '<=', $validated['start_time'])
-            ->where('end_time', '>=', $validated['end_time'])
-            ->exists();
+                                      ->where('date', $validated['appointment_date'])
+                                      ->where('start_time', '<=', $validated['start_time'])
+                                      ->where('end_time', '>=', $validated['end_time'])
+                                      ->exists();
 
         if (!$availability) {
             return response()->json([
@@ -62,7 +62,7 @@ class AppointmentController extends Controller
         return redirect() -> back() -> with('success', 'Appointment created successfully.');
     }
 
-    public function update(Request $request, $id)
+public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'appointment_date' => 'required|date',
