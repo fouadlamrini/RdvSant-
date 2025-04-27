@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/patient/dashboard', [DashboardController::class, 'patientDashboard'])->name('patient.dashboard');
     Route::get('/admin/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/patient/mes-rendez-vous', [DashboardController::class, 'mesRendezVous'])->name('patient.mesRendezVous');
 });
 
 Route::get('/about',[PagesController::class, 'showAbout'])->name('about');

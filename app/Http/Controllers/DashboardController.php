@@ -30,5 +30,13 @@ class DashboardController extends Controller
         return view('patient.dashboard', compact('doctors'));
     }
 
-    
+    public function mesRendezVous()
+    {
+        $appointments = Appointment::where('patient_id', auth()->id())
+            ->where('status', 'confirmed')
+            ->with('doctor')
+            ->get();
+
+        return view('patient.MesRendezVous', compact('appointments'));
+    }
 }
