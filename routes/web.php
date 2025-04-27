@@ -58,7 +58,6 @@ Route::post('/doctor/{doctorId}/appointments', [AppointmentController::class, 'b
 
 Route::post('appointments/store', [AppointmentController::class, 'store'])->name('appointments.store');     
 
-
 Route::get('/appointments/{id}/confirm', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
 Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 

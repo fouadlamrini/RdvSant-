@@ -62,6 +62,37 @@ class AppointmentController extends Controller
         return redirect() -> back() -> with('success', 'Appointment created successfully.');
     }
 
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'appointment_date' => 'required|date',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
+        ]);
+
+        $appointment = Appointment::findOrFail($id);
+
+        // Check availability
+        $availability = Disponibility::where('doctor_id', $appointment->doctor_id)
+            ->where('date', $validated['appointment_date'])
+            ->where('start_time', '<=', $validated['start_time'])
+            ->where('end_time', '>=', $validated['end_time'])
+            ->where('status', 'available')
+            ->exists();
+
+        if (!$availability) {
+            return redirect()->back()->with('error', 'Le créneau sélectionné n\'est pas disponible.');
+        }
+
+        // Update appointment
+        $appointment->update([
+            'appointment_date' => $validated['appointment_date'],
+            'start_time' => $validated['start_time'],
+            'end_time' => $validated['end_time'],
+        ]);
+
+        return redirect()->route('patient.mesRendezVous')->with('success', 'Rendez-vous modifié avec succès.');
+    }
 
     public function confirm($id)
     {
