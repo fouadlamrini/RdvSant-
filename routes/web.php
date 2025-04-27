@@ -49,7 +49,8 @@ Route::post('/doctorShudule', [PagesController::class, 'storeSchedule']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/doctor/schedule/events', [DisponibilityController::class, 'getScheduleEvents']);
-
+Route::put('/disponibility/{id}', [DisponibilityController::class, 'update'])->name('disponibility.update');
+Route::delete('/disponibility/{id}', [DisponibilityController::class, 'destroy'])->name('disponibility.destroy');
 
 Route::get('/doctor/{doctorId}/appointments', [AppointmentController::class, 'showAvailableSlots'])->name('appointments.showAvailableSlots');
 

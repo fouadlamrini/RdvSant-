@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -64,6 +63,70 @@
             </form>
             
             </div>
+
+            <!-- Availability List -->
+            <div class="mt-8">
+                <h2 class="text-lg font-semibold mb-4">Liste des Disponibilités</h2>
+                <div id="availabilityList" class="space-y-4">
+                    @foreach ($availabilities as $availability)
+                    <div class="border rounded-lg p-4 shadow-sm">
+                        <p class="text-gray-600">Date : {{ $availability->date }}</p>
+                        <p class="text-gray-600">Heure : {{ $availability->start_time }} - {{ $availability->end_time }}</p>
+                        <div class="flex space-x-4 mt-4">
+                            <!-- Modify Button -->
+                            <button 
+                                class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
+                                onclick="openEditModal({{ $availability->id }}, '{{ $availability->date }}', '{{ $availability->start_time }}', '{{ $availability->end_time }}')">
+                                Modifier
+                            </button>
+                            <!-- Delete Button -->
+                            <form action="{{ route('disponibility.destroy', $availability->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette disponibilité ?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Edit Modal -->
+            <div id="editModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden flex items-center justify-center">
+                <div class="bg-white rounded-lg shadow-lg p-6 w-1/2">
+                    <h3 class="text-lg font-semibold mb-4">Modifier la Disponibilité</h3>
+                    <form id="editForm" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" id="availabilityId" name="availability_id">
+                        <label for="date" class="block">Date :</label>
+                        <input type="date" id="date" name="date" class="p-2 mt-2 mb-4 border border-gray-300 rounded" required>
+                        <label for="start_time" class="block">Heure de début :</label>
+                        <input type="time" id="start_time" name="start_time" class="p-2 mt-2 mb-4 border border-gray-300 rounded" required>
+                        <label for="end_time" class="block">Heure de fin :</label>
+                        <input type="time" id="end_time" name="end_time" class="p-2 mt-2 mb-4 border border-gray-300 rounded" required>
+                        <div class="flex justify-end space-x-4">
+                            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600" onclick="closeEditModal()">Annuler</button>
+                            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                function openEditModal(id, date, startTime, endTime) {
+                    document.getElementById('editModal').classList.remove('hidden');
+                    document.getElementById('availabilityId').value = id;
+                    document.getElementById('date').value = date;
+                    document.getElementById('start_time').value = startTime;
+                    document.getElementById('end_time').value = endTime;
+                    document.getElementById('editForm').action = `/disponibility/${id}`;
+                }
+
+                function closeEditModal() {
+                    document.getElementById('editModal').classList.add('hidden');
+                }
+            </script>
         </main>
     </div>
 </body>

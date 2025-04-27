@@ -17,10 +17,11 @@ class PagesController extends Controller
         return view('pages/Home');
     }
 
-
- 
-       function doctorShudule(){
-    return view('doctor/DoctorShudule');}
+    public function doctorShudule()
+    {
+        $availabilities = Disponibility::where('doctor_id', auth()->id())->get();
+        return view('doctor.DoctorShudule', compact('availabilities'));
+    }
 
     public function storeSchedule(Request $request)
     {
@@ -35,4 +36,4 @@ class PagesController extends Controller
         Disponibility::create($validated);
         return redirect()->back()->with('success', 'Schedule created successfully.');
     }
-}  
+}
