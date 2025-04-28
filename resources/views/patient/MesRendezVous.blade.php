@@ -10,6 +10,12 @@
     <header class="bg-blue-600 text-white p-4 text-center">
         <h1 class="text-xl font-bold">Mes Rendez-Vous Confirmés</h1>
     </header>
+    <nav class="bg-white border-b flex justify-center space-x-4 p-3">
+        <a href="{{route("patient.dashboard")}}" class="text-gray-600 font-medium">HOME</a>
+        <a href="{{route("patient.mesRendezVous")}}" class="text-blue-600">Mes Rendez-Vous</a>
+       
+        <a href="{{ route('logout') }}" class="text-red-600 hover:text-red-800 font-medium">Déconnexion</a>
+    </nav>
 
     <div class="container mx-auto px-4 py-6">
         <div class="bg-white shadow-md rounded-lg p-6">

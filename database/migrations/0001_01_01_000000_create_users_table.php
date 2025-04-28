@@ -17,8 +17,11 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password');
+            
             $table->string('speciality')->nullable();
             $table->text('bio')->nullable();
+            $table->string('city')->nullable();
+            $table->string('image')->nullable();
             $table->enum('role', ['admin', 'doctor', 'patient']);
             $table->enum('status', ['pending', 'active', 'inactive'])->default('pending');
 
