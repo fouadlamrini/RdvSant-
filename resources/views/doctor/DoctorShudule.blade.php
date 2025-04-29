@@ -38,6 +38,7 @@
             <nav class="space-y-2">
                 <a href="{{ route('doctor.dashboard') }}" class="block bg-blue-600 p-2 rounded">Appointments list</a>
                 <a href="{{ route('doctorShudule') }}" class="block bg-blue-600 p-2 rounded">Doctor Schedule</a>
+                <a href="{{route('doctor.profile')}}" class="block bg-blue-600 p-2 rounded">My Profile </a>
                 <a href="{{ route('logout') }}" class="block bg-red-600 p-2 rounded">Déconnexion</a>
             </nav>
         </aside>
