@@ -7,6 +7,7 @@ use App\Http\Controllers\DisponibilityController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ProfileContoller;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -40,6 +41,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/patient/mes-rendez-vous', [DashboardController::class, 'mesRendezVous'])->name('patient.mesRendezVous');
+    Route::get('/doctor/profile', [ProfileContoller::class, 'show'])->name('doctor.profile');
+    Route::post('/doctor/profile', [ProfileContoller::class, 'update'])->name('doctor.profile.update');
 });
 
 Route::get('/about',[PagesController::class, 'showAbout'])->name('about');

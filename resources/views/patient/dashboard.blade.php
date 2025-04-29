@@ -67,9 +67,8 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($doctors as $doctor)
                 <div class="border rounded-lg p-4 flex flex-col items-center shadow-sm">
-                    <img src="https://via.placeholder.com/100" alt="Dr. {{ $doctor->first_name }}" class="w-16 h-16 rounded-full mb-4">
-                    <h4 class="font-semibold">Dr. {{ $doctor->first_name . ' ' . $doctor->last_name }}</h4>
-                    <p class="text-gray-600">{{ $doctor->speciality }} - Nador</p>
+                    <img src="{{ $doctor->image ? asset('storage/' . $doctor->image) : 'https://previews.123rf.com/images/belopoppa/belopoppa1809/belopoppa180900002/109693900-image-d-espace-r%C3%A9serv%C3%A9-de-profil-silhouette-grise-pas-de-photo-d-une-personne-sur-l-avatar-la.jpg' }}" alt="Profile Photo" class="w-24 h-24 rounded-full mr-4">                    <h4 class="font-semibold">Dr. {{ $doctor->first_name . ' ' . $doctor->last_name }}</h4>
+                    <p class="text-gray-600">{{ $doctor->speciality }} - {{$doctor->city}}</p>
                     <button 
                         class="btn-prendre-rendez-vous bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-4" 
                         data-doctor-id="{{ $doctor->id }}">
