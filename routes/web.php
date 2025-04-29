@@ -33,6 +33,7 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::get('/doctor/schedule/events', [DisponibilityController::class, 'getScheduleEvents']);
     Route::put('/disponibility/{id}', [DisponibilityController::class, 'update'])->name('disponibility.update');
     Route::delete('/disponibility/{id}', [DisponibilityController::class, 'destroy'])->name('disponibility.destroy');
+    Route::get('/appointments/{id}/confirm', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
 });
 
 
@@ -48,8 +49,8 @@ Route::middleware(['auth', 'patient'])->group(function () {
 
     Route::post('appointments/store', [AppointmentController::class, 'store'])->name('appointments.store');
 
-    Route::get('/appointments/{id}/confirm', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
     Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+    
 });
 
 
@@ -57,6 +58,8 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+  
+    Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 });
 
 Route::get('/about', [PagesController::class, 'showAbout'])->name('about');
@@ -79,6 +82,8 @@ Route::get('/signup/patient', function () {
 });
 
 Route::post("signup/patient", [AuthController::class, "RegisterPatient"])->name("signup.patient");
+
+Route::get('/doctors/search', [UserController::class, 'searchDoctors'])->name('doctors.search');
 
 
 

@@ -67,12 +67,13 @@
             <div class="bg-gray-50 px-6 py-8">
                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Prendre Un Rendez-Vous</h2>
                 
-                <div class="max-w-3xl mx-auto grid md:grid-cols-3 gap-6">
+                <form action="{{ route('doctors.search') }}" method="GET" class="max-w-3xl mx-auto grid md:grid-cols-3 gap-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Spécialité</label>
-                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <select name="speciality" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Toutes les spécialités</option>
                             @foreach ($doctors->pluck('speciality')->unique() as $speciality)
-                            <option>{{ $speciality }}</option>
+                                <option value="{{ $speciality }}">{{ $speciality }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -81,17 +82,18 @@
                         <label class="block text-sm font-medium text-gray-700 mb-1">Ville</label>
                         <input 
                             type="text" 
+                            name="city" 
                             placeholder="Entrez votre ville" 
                             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         >
                     </div>
                     
                     <div class="flex items-end">
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-md">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-md">
                             Rechercher
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
 
             <!-- Doctors List -->
