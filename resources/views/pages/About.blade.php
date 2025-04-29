@@ -12,9 +12,9 @@
 <body class="bg-white text-gray-800">
 
   <!-- Navbar -->
-  <nav class="bg-black text-white shadow-md">
+  <nav class="bg-blue-900 text-white shadow-lg">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="{{route('home')}}" class="text-2xl font-bold">RdvSent</a>
+      <a href="{{route('home')}}" class="text-2xl font-bold tracking-tight">RdvSent</a>
 
       <!-- Hamburger Menu Button -->
       <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
@@ -23,28 +23,35 @@
         </svg>
       </button>
 
-      <!-- Desktop Links --> 
-      <div class="hidden md:flex space-x-4">
-        <a href="{{ route('home') }}" class="hover:text-blue-500">Home</a>
-        <a href="{{ route('about') }}" class="hover:text-blue-500">About</a>
-        <a href="{{ route('signup.doctor') }}" class="hover:text-blue-500">Sign Up Doctor</a>
-        <a href="{{ route('signup.patient') }}" class="hover:text-blue-500">Sign Up Patient</a>
-        <a href="{{ route('login') }}" class="hover:text-blue-500">Login</a>
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-6">
+        <a href="{{ route('home') }}" class="hover:text-blue-300 transition-colors duration-200">Home</a>
+        <a href="{{ route('about') }}" class="hover:text-blue-300 transition-colors duration-200">About</a>
+        <div class="relative group">
+          <button class="hover:text-blue-300 transition-colors duration-200 flex items-center">
+            Sign Up 
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md mt-2 py-1 w-48 z-10">
+            <a href="{{ route('signup.doctor') }}" class="block px-4 py-2 hover:bg-blue-100">As Doctor</a>
+            <a href="{{ route('signup.patient') }}" class="block px-4 py-2 hover:bg-blue-100">As Patient</a>
+          </div>
+        </div>
+        <a href="{{ route('login') }}" class="bg-white text-blue-700 px-4 py-2 rounded-md hover:bg-blue-100 transition-colors duration-200 font-medium">Login</a>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
-      <a href="{{ route('home') }}" class="block py-2 hover:text-blue-500">Home</a>
-      <a href="{{ route('about') }}" class="block py-2 hover:text-blue-500">About</a>
-      <a href="{{ route('signup.doctor') }}" class="block py-2 hover:text-blue-500">Sign Up Doctor</a>
-      <a href="{{ route('signup.patient') }}" class="block py-2 hover:text-blue-500">Sign Up Patient</a>
-      <a href="{{ route('login') }}" class="block py-2 hover:text-blue-500">Login</a>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-blue-800">
+      <a href="{{ route('home') }}" class="block py-3 hover:text-blue-300 border-b border-blue-700">Home</a>
+      <a href="{{ route('about') }}" class="block py-3 hover:text-blue-300 border-b border-blue-700">About</a>
+      <a href="{{ route('signup.doctor') }}" class="block py-3 hover:text-blue-300 border-b border-blue-700">Sign Up Doctor</a>
+      <a href="{{ route('signup.patient') }}" class="block py-3 hover:text-blue-300 border-b border-blue-700">Sign Up Patient</a>
+      <a href="{{ route('login') }}" class="block py-3 hover:text-blue-300">Login</a>
     </div>
-  </nav>
-
-  
-
+  </nav> 
   <!-- end navbar -->
 
   <!-- about section -->
@@ -72,12 +79,37 @@
   <!-- end about section -->
 
   <!-- Footer -->
-  <footer class="bg-black text-white text-center py-6">
-    <p class="mb-2">&copy; 2025 RdvSent. All Rights Reserved.</p>
-    <div class="space-x-4">
-      <a href="#privacy" class="hover:text-blue-500">Privacy Policy</a>
-      <a href="#terms" class="hover:text-blue-500">Terms of Service</a>
-      <a href="#contact" class="hover:text-blue-500">Contact</a>
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">RdvSent</h3>
+          <p class="text-gray-400">Votre plateforme de rendez-vous médicaux en ligne, simple et efficace.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-gray-300">Liens rapides</h4>
+          <ul class="space-y-2">
+            <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+            <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+            <li><a href="{{ route('signup.doctor') }}" class="text-gray-400 hover:text-white transition-colors">Devenir médecin</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-gray-300">Compte</h4>
+          <ul class="space-y-2">
+            <li><a href="{{ route('login') }}" class="text-gray-400 hover:text-white transition-colors">Connexion</a></li>
+            <li><a href="{{ route('signup.patient') }}" class="text-gray-400 hover:text-white transition-colors">Inscription patient</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-gray-300">Contact</h4>
+          <p class="text-gray-400">contact@rdvsent.com</p>
+          <p class="text-gray-400">+212 6 12 34 56 78</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 RdvSent. Tous droits réservés.</p>
+      </div>
     </div>
   </footer>
 
