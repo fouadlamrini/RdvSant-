@@ -20,6 +20,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/admin/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/admin/users/search', [UserController::class, 'searchUsers'])->name('users.search');
 });
 
 

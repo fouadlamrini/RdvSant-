@@ -23,7 +23,10 @@
         <main class="flex-1 p-6">
             <div class="mb-4 flex flex-col md:flex-row justify-between items-center gap-4">
                 <h1 class="text-2xl font-bold">Dashboard</h1>
-                <input type="text" placeholder="Search" class="p-2 border rounded w-full md:w-1/3">
+                <form method="GET" action="{{ route('users.search') }}" class="flex gap-2 w-full md:w-1/3">
+                    <input type="text" name="search" placeholder="Rechercher par nom ou prénom" class="p-2 border rounded flex-1">
+                    <button type="submit" class="p-2 bg-blue-600 text-white rounded">Rechercher</button>
+                </form>
             </div>
             
             <!-- Cards -->

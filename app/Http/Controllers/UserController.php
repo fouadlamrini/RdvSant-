@@ -48,4 +48,15 @@ class UserController extends Controller
 
         return view('patient.dashboard', compact('doctors'));
     }
+
+    public function searchUsers(Request $request)
+    {
+        $search = $request->input('search');
+        $users = User::query()
+            ->where('first_name', 'like', '%' . $search . '%')
+            ->orWhere('last_name', 'like', '%' . $search . '%')
+            ->get();
+
+        return view('admin.dashboard', compact('users'));
+    }
 }
