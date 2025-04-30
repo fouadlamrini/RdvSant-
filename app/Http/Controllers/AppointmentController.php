@@ -21,6 +21,7 @@ class AppointmentController extends Controller
     
                  return response()->json($availableSlots);
     }
+    
 
    
     public function store(Request $request)

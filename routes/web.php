@@ -8,6 +8,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileContoller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -70,6 +71,9 @@ Route::get('/about', [PagesController::class, 'showAbout'])->name('about');
 Route::get('/', [PagesController::class, 'showHome'])->name('home');
 
 Route::get('/login', function () {
+    if (Auth::check()) {
+        return redirect()->back() ;
+    }
     return view('auth/login');
 });
 
