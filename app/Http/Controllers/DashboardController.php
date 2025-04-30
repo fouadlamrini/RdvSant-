@@ -30,7 +30,7 @@ class DashboardController extends Controller
         return view('patient.dashboard', compact('doctors'));
     }
 
-public function mesRendezVous()
+    public function mesRendezVous()
     {
         $appointments = Appointment::where('patient_id', auth()->id())
             ->where('status', 'confirmed')
@@ -39,4 +39,26 @@ public function mesRendezVous()
 
         return view('patient.MesRendezVous', compact('appointments'));
     }    
+
+    public function doctorStatistics()
+    {
+        $doctorId = auth()->user()->id;
+
+        $totalPatients = Appointment::where('doctor_id', $doctorId)->distinct('patient_id')->count('patient_id');
+        $totalAppointments = Appointment::where('doctor_id', $doctorId)->count();
+        $confirmedAppointments = Appointment::where('doctor_id', $doctorId)->where('status', 'confirmed')->count();
+        $pendingAppointments = Appointment::where('doctor_id', $doctorId)->where('status', 'pending')->count();
+
+        return view('doctor.statistique', compact('totalPatients', 'totalAppointments', 'confirmedAppointments', 'pendingAppointments'));
+    }
+
+    public function adminStatistics()
+    {
+        $totalUsers = User::count();
+        $totalDoctors = User::where('role', 'doctor')->count();
+        $totalPatients = User::where('role', 'patient')->count();
+        $totalAppointments = Appointment::count();
+
+        return view('admin.statistique', compact('totalUsers', 'totalDoctors', 'totalPatients', 'totalAppointments'));
+    }
 }

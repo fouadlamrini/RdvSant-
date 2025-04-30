@@ -12,9 +12,8 @@
         <aside class="bg-gray-900 text-white w-full md:w-64 p-4 space-y-4">
             <div class="text-xl font-bold">Admin DASHBOARD</div>
             <nav class="space-y-2">
-                <a href="#" class="block bg-blue-600 p-2 rounded">Dashboard</a>
-                <a href="#" class="block bg-blue-600 p-2 rounded">STATISTIQUE</a>
-                <a href="#" class="block bg-blue-600 p-2 rounded">USER</a>
+                <a href="{{route('admin.dashboard')}}" class="block bg-blue-600 p-2 rounded">Dashboard</a>
+                <a href="{{route('admin.statistics')}}" class="block bg-blue-600 p-2 rounded">STATISTIQUE</a>
                 <a href="{{ route('logout') }}" class="block bg-red-600 p-2 rounded">Déconnexion</a>
             </nav>
         </aside>
@@ -29,25 +28,7 @@
                 </form>
             </div>
             
-            <!-- Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div class="bg-white p-4 shadow rounded-lg flex items-center justify-center">
-                    <span class="text-lg font-bold"> {{ $users->count() }}</span>
-                    <span class="ml-2">Utilisateurs</span>
-                </div>
-                <div class="bg-white p-4 shadow rounded-lg flex items-center justify-center">
-                    <span class="text-lg font-bold">1</span>
-                    <span class="ml-2">Projets</span>
-                </div>
-                <div class="bg-white p-4 shadow rounded-lg flex items-center justify-center">
-                    <span class="text-lg font-bold">1</span>
-                    <span class="ml-2">Freelances</span>
-                </div>
-                <div class="bg-white p-4 shadow rounded-lg flex items-center justify-center">
-                    <span class="text-lg font-bold">1</span>
-                    <span class="ml-2">Offres</span>
-                </div>
-            </div>
+          
             
             <!-- Users Table -->
             <div class="bg-white p-4 shadow rounded-lg overflow-x-auto">

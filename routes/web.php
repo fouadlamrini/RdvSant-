@@ -21,6 +21,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/admin/users/search', [UserController::class, 'searchUsers'])->name('users.search');
+    Route::get('/admin/statistics', [DashboardController::class, 'adminStatistics'])->name('admin.statistics');
 });
 
 
@@ -35,6 +36,7 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::put('/disponibility/{id}', [DisponibilityController::class, 'update'])->name('disponibility.update');
     Route::delete('/disponibility/{id}', [DisponibilityController::class, 'destroy'])->name('disponibility.destroy');
     Route::get('/appointments/{id}/confirm', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
+    Route::get('/doctor/statistics', [DashboardController::class, 'doctorStatistics'])->name('doctor.statistics');
 });
 
 
