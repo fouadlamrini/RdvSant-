@@ -68,15 +68,9 @@ public function rendezVousAsDoctor()
     return $this->hasMany(Appointment::class, 'doctor_id');
 }
 
-public function videoConsultationsAsPatient()
-{
-    return $this->hasMany(VideoConsultation::class, 'patient_id');
-}
 
 
-public function videoConsultationsAsDoctor()
-{
-    return $this->hasMany(VideoConsultation::class, 'doctor_id');
-}
+
+
 
 }
