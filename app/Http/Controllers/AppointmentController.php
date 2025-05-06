@@ -73,7 +73,7 @@ public function update(Request $request, $id)
 
         $appointment = Appointment::findOrFail($id);
 
-        // Check availability
+        
         $availability = Disponibility::where('doctor_id', $appointment->doctor_id)
             ->where('date', $validated['appointment_date'])
             ->where('start_time', '<=', $validated['start_time'])
@@ -85,7 +85,7 @@ public function update(Request $request, $id)
             return redirect()->back()->with('error', 'Le créneau sélectionné n\'est pas disponible.');
         }
 
-        // Update appointment
+
         $appointment->update([
             'appointment_date' => $validated['appointment_date'],
             'start_time' => $validated['start_time'],

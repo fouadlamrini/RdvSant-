@@ -13,11 +13,7 @@ class UserController extends Controller
 
         if ($user->status === 'pending') {
             $user->status = 'active';
-        } elseif ($user->status === 'active') {
-            $user->status = 'inactive';
-        } elseif ($user->status === 'inactive') {
-            $user->status = 'active';
-        }
+        } 
 
         $user->save();
 
