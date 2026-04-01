@@ -48,11 +48,11 @@ class AuthController extends Controller
         ]);
 
 
-        return redirect()->back()->with("success", "Your Account created successfully");
+        return redirect()->route('signup.patient')->with("success", "Your Account created successfully");
     }
 
 
-    
+
     public function RegisterDoctor(Request $request)
     {
 
@@ -62,7 +62,7 @@ class AuthController extends Controller
                 "last_name" => "required|string|max:255|regex:/^[a-zA-ZÀ-ÿ\s]+$/",
                 "email" => "required|email|unique:users",
                 "password" => "required|min:8",
-                "speciality" => "required|min:8",
+                "speciality" => "required|min:3",
                 "bio" => "required|min:8",
             ],
             [
@@ -93,7 +93,7 @@ class AuthController extends Controller
         ]);
 
 
-        return redirect()->back()->with("success", "Your Account created successfully");
+        return redirect()->route('signup.doctor')->with("success", "Your Account created successfully");
     }
 
 
@@ -102,39 +102,37 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-       
+
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-       
+
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
             if ($user->status == "pending") {
-                $doctorFname=Auth::user()->first_name;
-                $doctorLname=Auth::user()->last_name;
-            
-                return view('pending.pending', compact('doctorFname','doctorLname'));
+                $doctorFname = Auth::user()->first_name;
+                $doctorLname = Auth::user()->last_name;
+
+                return view('pending.pending', compact('doctorFname', 'doctorLname'));
             } else {
                 return match ($user->role) {
-                    'admin' =>redirect()->route('admin.dashboard'),
+                    'admin' => redirect()->route('admin.dashboard'),
                     'doctor' => redirect()->route('doctor.dashboard'),
-                    'patient' =>redirect()->route('patient.dashboard'),
+                    'patient' => redirect()->route('patient.dashboard'),
                     default => redirect()->route('home'),
                 };
             }
         }
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
-   
+
     public function logout()
     {
         Auth::logout();
         return view('auth/login');
-    } 
-
-    
+    }
 }

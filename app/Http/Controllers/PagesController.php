@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Disponibility;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PagesController extends Controller
 {
- 
+
     function showAbout()
     {
         return view('pages/About');
@@ -19,21 +20,27 @@ class PagesController extends Controller
 
     public function doctorShudule()
     {
-        $availabilities = Disponibility::where('doctor_id', auth()->id())->get();
+        $availabilities = Disponibility::where('doctor_id', auth()->id())
+            ->whereDate('date', '>=', now()->toDateString())
+            ->orderBy('date')
+            ->get();
         return view('doctor.DoctorShudule', compact('availabilities'));
     }
 
     public function storeSchedule(Request $request)
     {
-        // dd($request->all());
         $validated = $request->validate([
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i',
-            'date' => 'required|date',
+            'date' => 'required|date|after_or_equal:today',
+            'start_time' => 'required|date_format:H:i|after_or_equal:09:00|before_or_equal:18:00',
+            'end_time' => 'required|date_format:H:i|after:start_time|after_or_equal:09:00|before_or_equal:18:00',
+        ], [
+            'date.after_or_equal' => 'La date doit être aujourd\'hui ou ultérieure.',
+            'end_time.after' => 'L\'heure de fin doit être après l\'heure de début.',
         ]);
 
         $validated['doctor_id'] = auth()->id();
         Disponibility::create($validated);
-        return redirect()->back()->with('success', 'Schedule created successfully.');
+
+        return redirect()->back()->with('success', 'Disponibilité enregistrée avec succès.');
     }
 }

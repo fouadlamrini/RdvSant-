@@ -54,7 +54,6 @@
                             $statusColor = match($user->status) {
                                 'pending' => 'text-yellow-500',
                                 'active' => 'text-blue-600',
-                                'inactive' => 'text-red-500',
                                 default => 'text-gray-500'
                             };
                         @endphp
