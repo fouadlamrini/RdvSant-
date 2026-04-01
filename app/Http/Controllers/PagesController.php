@@ -38,6 +38,13 @@ class PagesController extends Controller
             'end_time.after' => 'L\'heure de fin doit être après l\'heure de début.',
         ]);
 
+        if ($validated['date'] === now()->toDateString()) {
+            $currentTime = Carbon::now()->format('H:i');
+            if (Carbon::createFromFormat('H:i', $validated['start_time'])->lt(Carbon::createFromFormat('H:i', $currentTime))) {
+                return redirect()->back()->withErrors(['start_time' => 'L\'heure de début doit être égale ou supérieure à l\'heure actuelle.'])->withInput();
+            }
+        }
+
         $validated['doctor_id'] = auth()->id();
         Disponibility::create($validated);
 

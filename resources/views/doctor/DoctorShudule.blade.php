@@ -38,6 +38,28 @@
             if (dateInput) {
                 const today = new Date().toISOString().split('T')[0];
                 dateInput.min = today;
+
+                const now = new Date();
+                const currentTime = now.toTimeString().slice(0, 5);
+
+                if (dateInput.value === today && startInput) {
+                    startInput.min = currentTime;
+                }
+
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = this.value;
+                    const now = new Date();
+                    const currentTime = now.toTimeString().slice(0, 5);
+
+                    if (selectedDate === today && startInput) {
+                        startInput.min = currentTime;
+                        if (startInput.value && startInput.value < currentTime) {
+                            startInput.value = currentTime;
+                        }
+                    } else if (startInput) {
+                        startInput.min = '09:00';
+                    }
+                });
             }
 
             if (startInput && endInput) {

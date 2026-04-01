@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Disponibility;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DisponibilityController extends Controller
 {
@@ -31,6 +32,13 @@ class DisponibilityController extends Controller
             'start_time' => 'required|date_format:H:i|after_or_equal:09:00|before_or_equal:18:00',
             'end_time' => 'required|date_format:H:i|after:start_time|after_or_equal:09:00|before_or_equal:18:00',
         ]);
+
+        if ($validated['date'] === now()->toDateString()) {
+            $currentTime = Carbon::now()->format('H:i');
+            if (Carbon::createFromFormat('H:i', $validated['start_time'])->lt(Carbon::createFromFormat('H:i', $currentTime))) {
+                return redirect()->back()->withErrors(['start_time' => 'L\'heure de début doit être égale ou supérieure à l\'heure actuelle.'])->withInput();
+            }
+        }
 
         $availability = Disponibility::findOrFail($id);
         $availability->update($validated);
