@@ -36,7 +36,7 @@
                 </div>
                 <div class="bg-white p-4 shadow rounded-lg">
                     <h2 class="text-lg font-bold">Total Rendez-vous</h2>
-                    <p class="text-2xl">{{ $totalAppointments }}</p>
+                    <p class="text-2xl">{{ $totalAppointments ?? 0 }}</p>
                 </div>
             </div>
         </main>

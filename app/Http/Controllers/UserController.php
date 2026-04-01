@@ -42,7 +42,10 @@ class UserController extends Controller
 
         $doctors = $query->get();
 
-        return view('patient.dashboard', compact('doctors'));
+        $patientId = auth()->id();
+        $totalAppointments = \App\Models\Appointment::where('patient_id', $patientId)->count();
+
+        return view('patient.dashboard', compact('doctors', 'totalAppointments'));
     }
 
     public function searchUsers(Request $request)

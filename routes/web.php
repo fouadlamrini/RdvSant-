@@ -46,6 +46,7 @@ Route::middleware(['auth', 'patient'])->group(function () {
     Route::get('/patient/dashboard', [DashboardController::class, 'patientDashboard'])->name('patient.dashboard');
 
     Route::get('/patient/mes-rendez-vous', [DashboardController::class, 'mesRendezVous'])->name('patient.mesRendezVous');
+    Route::get('/patient/mes-reservations', [DashboardController::class, 'mesReservations'])->name('patient.mesReservations');
     Route::get('/doctor/{doctorId}/appointments', [AppointmentController::class, 'showAvailableSlots'])->name('appointments.showAvailableSlots');
 
 

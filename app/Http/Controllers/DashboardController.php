@@ -11,34 +11,58 @@ class DashboardController extends Controller
     public function adminDashboard()
     {
         $users = User::where('role', '!=', 'admin')->get();
-        return view('admin.dashboard',compact('users'));
+        return view('admin.dashboard', compact('users'));
     }
 
     public function doctorDashboard()
     {
         $doctorId = auth()->id();
         $appointments = Appointment::where('doctor_id', $doctorId)
-        ->with('patient')
-        ->get();
+            ->with('patient')
+            ->get();
         return view('doctor.dashboard', compact('appointments', 'doctorId'));
     }
 
     public function patientDashboard()
     {
-        $doctors = User::where('status', 'active')->where('role', 'doctor')->get(); 
-    
-        return view('patient.dashboard', compact('doctors'));
+        $doctors = User::where('status', 'active')->where('role', 'doctor')->get();
+        $patientId = auth()->id();
+        $totalAppointments = Appointment::where('patient_id', $patientId)->count();
+
+        return view('patient.dashboard', compact('doctors', 'totalAppointments'));
     }
 
     public function mesRendezVous()
     {
-        $appointments = Appointment::where('patient_id', auth()->id())
+        $patientId = auth()->id();
+
+        $appointmentsConfirmed = Appointment::where('patient_id', $patientId)
             ->where('status', 'confirmed')
             ->with('doctor')
+            ->orderBy('appointment_date')
+            ->orderBy('start_time')
             ->get();
 
-        return view('patient.MesRendezVous', compact('appointments'));
-    }    
+        $totalAppointments = Appointment::where('patient_id', $patientId)->count();
+
+        return view('patient.MesRendezVous', compact('appointmentsConfirmed', 'totalAppointments'));
+    }
+
+    public function mesReservations()
+    {
+        $patientId = auth()->id();
+
+        $appointmentsPending = Appointment::where('patient_id', $patientId)
+            ->where('status', 'pending')
+            ->with('doctor')
+            ->orderBy('appointment_date')
+            ->orderBy('start_time')
+            ->get();
+
+        $totalAppointments = Appointment::where('patient_id', $patientId)->count();
+
+        return view('patient.MesReservations', compact('appointmentsPending', 'totalAppointments'));
+    }
 
     public function doctorStatistics()
     {

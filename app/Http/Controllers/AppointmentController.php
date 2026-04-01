@@ -10,20 +10,20 @@ use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
-    
+
     public function showAvailableSlots($doctorId)
     {
-                $availableSlots = Disponibility::where('doctor_id', $doctorId)
+        $availableSlots = Disponibility::where('doctor_id', $doctorId)
             ->whereDate('date', '>=', now()->toDateString())
             ->orderBy('date')
             ->orderBy('start_time')
-            ->get(['date', 'start_time', 'end_time','status']);
-    
-                 return response()->json($availableSlots);
-    }
-    
+            ->get(['date', 'start_time', 'end_time', 'status']);
 
-   
+        return response()->json($availableSlots);
+    }
+
+
+
     public function store(Request $request)
     {
 
@@ -31,13 +31,13 @@ class AppointmentController extends Controller
             'doctor_id' => 'required|exists:users,id',
             'appointment_date' => 'required|date',
             'start_time' => 'required',
-            'end_time' => 'required|after:start_time',  
+            'end_time' => 'required|after:start_time',
         ]);
         $availability = Disponibility::where('doctor_id', $validated['doctor_id'])
-                                      ->where('date', $validated['appointment_date'])
-                                      ->where('start_time', '<=', $validated['start_time'])
-                                      ->where('end_time', '>=', $validated['end_time'])
-                                      ->exists();
+            ->where('date', $validated['appointment_date'])
+            ->where('start_time', '<=', $validated['start_time'])
+            ->where('end_time', '>=', $validated['end_time'])
+            ->exists();
 
         if (!$availability) {
             return response()->json([
@@ -54,16 +54,16 @@ class AppointmentController extends Controller
             'end_time' => $validated['end_time'],
         ]);
         $availability = Disponibility::where('doctor_id', $validated['doctor_id'])
-        ->where('date', $validated['appointment_date'])
-        ->where('start_time', '<=', $validated['start_time'])
-        ->where('end_time', '>=', $validated['end_time'])->update([
-            'status' => 'booked',
-        ]);
+            ->where('date', $validated['appointment_date'])
+            ->where('start_time', '<=', $validated['start_time'])
+            ->where('end_time', '>=', $validated['end_time'])->update([
+                'status' => 'booked',
+            ]);
 
-        return redirect() -> back() -> with('success', 'Appointment created successfully.');
+        return redirect()->back()->with('success', 'Appointment created successfully.');
     }
 
-public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'appointment_date' => 'required|date',
@@ -73,7 +73,7 @@ public function update(Request $request, $id)
 
         $appointment = Appointment::findOrFail($id);
 
-        
+
         $availability = Disponibility::where('doctor_id', $appointment->doctor_id)
             ->where('date', $validated['appointment_date'])
             ->where('start_time', '<=', $validated['start_time'])
@@ -108,7 +108,10 @@ public function update(Request $request, $id)
     {
         $appointment = Appointment::findOrFail($id);
 
-        
+        if ($appointment->patient_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         Disponibility::where('doctor_id', $appointment->doctor_id)
             ->where('date', $appointment->appointment_date)
             ->where('start_time', '<=', $appointment->start_time)
@@ -117,6 +120,6 @@ public function update(Request $request, $id)
 
         $appointment->delete();
 
-        return back()->with('success', 'Appointment deleted.');
+        return back()->with('success', 'Rendez-vous annulé avec succès.');
     }
 }
